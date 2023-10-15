@@ -1,0 +1,17 @@
+<html>
+ <body>
+  <div class="root" data-content="README.md">
+  <script>
+      const root = document.querySelector('.root')
+      const link = root.dataset.content;
+
+      fetch(link)
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (html) {
+          root.innerHTML = html;
+        });
+  </script>
+ </body>
+</html>
